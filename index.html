@@ -1,15 +1,110 @@
-<doctype html> 
-    <head>
-        <title>My First Web Page</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
-    </head>
-    <body>
-        <h1>Robiou's Blog</h1>
-        <p>This is a simple web page created with HTML.</p>
-        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
-    </body>
-    <footer>
-        <p>Copyright 2025 My First Web Page</p>
-    </footer>
-</doctype>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Robiou’s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container navbar-flex">
+      <h1 class="logo">Robiou’s Blog</h1>
+      <nav>
+        <ul>
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+      <button id="darkToggle" aria-label="Activar modo oscuro">🌙</button>
+    </div>
+  </header>
+
+  <!-- SLIDER / HERO -->
+  <section id="hero" class="hero-slider">
+    <div class="slide active" style="background-image:url('https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/1.jpg')"></div>
+    <div class="slide" style="background-image:url('https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/10.jpg')"></div>
+    <div class="slide" style="background-image:url('https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/8.jpg')"></div>
+
+    <div class="hero-text">
+      <h2>Explora el Río de Socoa</h2>
+      <p>Fotografía, naturaleza y aventura en República Dominicana</p>
+      <a href="#galeria" class="btn">Ver Galería</a>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="gallery-section container fade">
+    <h2>Galería de Fotos</h2>
+
+    <div class="gallery-grid">
+      <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/1.jpg" alt="Río Socoa entre rocas y vegetación" loading="lazy">
+      <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/10.jpg" alt="Paisaje natural del Río Socoa" loading="lazy">
+      <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/8.jpg" alt="Vista panorámica del entorno de Socoa" loading="lazy">
+      <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/7.jpg" alt="Cauce del río rodeado de naturaleza" loading="lazy">
+      <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/2.jpg" alt="Zona de agua cristalina en Socoa" loading="lazy">
+      <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/5.jpg" alt="Detalle de paisaje en el Río Socoa" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section fade">
+    <div class="container about-grid">
+      <div>
+        <h2>Sobre este proyecto</h2>
+        <p>
+          Soy Marcelo, creador de este blog, explorador de rincones naturales en República Dominicana y apasionado por la fotografía outdoor.
+          Me gusta documentar rutas, paisajes y experiencias para que más personas descubran lugares como el Río Socoa de forma segura y responsable.
+          Este espacio nació para mostrar la energía de estos lugares, inspirar nuevas aventuras y motivar a valorar la naturaleza que tenemos.
+          Si quieres colaborar en contenido, rutas o visitas, será un gusto conectar.
+        </p>
+      </div>
+      <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/4.jpg" alt="Fotografía de naturaleza en República Dominicana" loading="lazy">
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contact" class="contact-section fade">
+    <div class="container">
+      <h2>Contacto</h2>
+      <p class="contact-links">
+         <a href="mailto:marcelo.robiu@gmail.com">marcelo.robiu@gmail.com</a>
+         <a href="tel:+18297637272">+1 829 763 7272</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- MAPA -->
+  <div class="mapa container">
+    <iframe
+      src="https://www.google.com/maps?q=rio+socoa+republica+dominicana&output=embed"
+      width="100%" height="350" style="border-radius:15px;" loading="lazy">
+    </iframe>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Robiou’s - Travel Blog</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <span id="close" aria-label="Cerrar visor">&times;</span>
+    <button id="prevImage" class="lightbox-nav" aria-label="Imagen anterior">&#10094;</button>
+    <img id="lightbox-img" alt="Imagen ampliada de la galería">
+    <button id="nextImage" class="lightbox-nav" aria-label="Imagen siguiente">&#10095;</button>
+  </div>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/18297637272" class="whatsapp-float" target="_blank" aria-label="Abrir chat de WhatsApp">💬</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
