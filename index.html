@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,6 +18,7 @@
       <nav>
         <ul>
           <li><a href="#hero">Inicio</a></li>
+          <li><a href="#destinos">Destinos</a></li>
           <li><a href="#galeria">Galería</a></li>
           <li><a href="#about">Sobre mí</a></li>
           <li><a href="#contact">Contacto</a></li>
@@ -34,11 +35,30 @@
     <div class="slide" style="background-image:url('https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/8.jpg')"></div>
 
     <div class="hero-text">
-      <h2>Explora el Río de Socoa</h2>
+      <h2>Explora Quisqueya</h2>
       <p>Fotografía, naturaleza y aventura en República Dominicana</p>
-      <a href="#galeria" class="btn">Ver Galería</a>
+      <a href="#destinos" class="btn">Ver Destinos</a>
     </div>
   </section>
+
+  <!-- DESTINOS -->
+  <section id="destinos" class="destinations-section container fade">
+    <h2>Destinos de aventura</h2>
+
+    <div class="destination-grid">
+      <a href="#socoa-space" class="polaroid-card" aria-label="Entrar al espacio de Río Socoa">
+        <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/1.jpg" alt="Tarjeta del destino Río Socoa" loading="lazy">
+        <span class="polaroid-title">Salto de Socoa</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="socoa-space" class="location-space fade">
+    <div class="container location-space-header">
+      <p class="location-space-tag">Destino Activo</p>
+      <h2>Río Socoa</h2>
+      <p>Este espacio reúne todo el contenido actual de Socoa: descripción, galería y contacto para visitas.</p>
+    </div>
 
   <!-- GALERÍA -->
   <section id="galeria" class="gallery-section container fade">
@@ -60,9 +80,9 @@
       <div>
         <h2>Sobre este proyecto</h2>
         <p>
-          Soy Marcelo, creador de este blog, explorador de rincones naturales en República Dominicana y apasionado por la fotografía outdoor.
-          Me gusta documentar rutas, paisajes y experiencias para que más personas descubran lugares como el Río Socoa de forma segura y responsable.
-          Este espacio nació para mostrar la energía de estos lugares, inspirar nuevas aventuras y motivar a valorar la naturaleza que tenemos.
+          Soy Marcelo, creador de este proyecto de aventura y exploración en República Dominicana.
+          Aunque hoy iniciamos con el Río Socoa, la visión es recorrer y compartir muchos más espacios naturales del país.
+          Este sitio existe para dar a conocer lo bello de RD, inspirar nuevas rutas y conectar a más personas con la experiencia de descubrir cada destino.
           Si quieres colaborar en contenido, rutas o visitas, será un gusto conectar.
         </p>
       </div>
@@ -88,6 +108,7 @@
       width="100%" height="350" style="border-radius:15px;" loading="lazy">
     </iframe>
   </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
