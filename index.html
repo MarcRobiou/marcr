@@ -20,6 +20,7 @@
           <li><a href="#hero">Inicio</a></li>
           <li><a href="#destinos">Destinos</a></li>
           <li><a href="#galeria">Galería</a></li>
+          <li><a href="#mapas">Mapas</a></li>
           <li><a href="#about">Sobre mí</a></li>
           <li><a href="#contact">Contacto</a></li>
         </ul>
@@ -35,7 +36,7 @@
     <div class="slide" style="background-image:url('https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/8.jpg')"></div>
 
     <div class="hero-text">
-      <h2>Explora Quisqueya</h2>
+      <h2>Quisqueya La Bella</h2>
       <p>Fotografía, naturaleza y aventura en República Dominicana</p>
       <a href="#destinos" class="btn">Ver Destinos</a>
     </div>
@@ -50,28 +51,48 @@
         <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/1.jpg" alt="Tarjeta del destino Río Socoa" loading="lazy">
         <span class="polaroid-title">Salto de Socoa</span>
       </a>
+      <a href="#montecristi-space" class="polaroid-card" aria-label="Entrar al espacio de El Morro">
+        <img src="https://montecristi.s3.us-east-1.amazonaws.com/1.jpeg" alt="Tarjeta del destino El Morro" loading="lazy">
+        <span class="polaroid-title">El Morro</span>
+      </a>
     </div>
   </section>
 
-  <section id="socoa-space" class="location-space fade">
-    <div class="container location-space-header">
-      <p class="location-space-tag">Destino Activo</p>
-      <h2>Río Socoa</h2>
-      <p>Este espacio reúne todo el contenido actual de Socoa: descripción, galería y contacto para visitas.</p>
-    </div>
-
   <!-- GALERÍA -->
   <section id="galeria" class="gallery-section container fade">
-    <h2>Galería de Fotos</h2>
+    <h2>Galería por ubicación</h2>
 
-    <div class="gallery-grid">
-      <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/1.jpg" alt="Río Socoa entre rocas y vegetación" loading="lazy">
-      <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/10.jpg" alt="Paisaje natural del Río Socoa" loading="lazy">
-      <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/8.jpg" alt="Vista panorámica del entorno de Socoa" loading="lazy">
-      <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/7.jpg" alt="Cauce del río rodeado de naturaleza" loading="lazy">
-      <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/2.jpg" alt="Zona de agua cristalina en Socoa" loading="lazy">
-      <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/5.jpg" alt="Detalle de paisaje en el Río Socoa" loading="lazy">
-    </div>
+    <article id="socoa-space" class="location-space">
+      <div class="location-space-header">
+        <p class="location-space-tag">Ubicación</p>
+        <h3>Río Socoa</h3>
+        <p>Fotografías del Salto de Socoa y su entorno natural.</p>
+      </div>
+      <div class="gallery-grid">
+        <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/1.jpg" alt="Río Socoa entre rocas y vegetación" loading="lazy">
+        <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/10.jpg" alt="Paisaje natural del Río Socoa" loading="lazy">
+        <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/8.jpg" alt="Vista panorámica del entorno de Socoa" loading="lazy">
+        <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/7.jpg" alt="Cauce del río rodeado de naturaleza" loading="lazy">
+        <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/2.jpg" alt="Zona de agua cristalina en Socoa" loading="lazy">
+        <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/5.jpg" alt="Detalle de paisaje en el Río Socoa" loading="lazy">
+      </div>
+    </article>
+
+    <article id="montecristi-space" class="location-space">
+      <div class="location-space-header">
+        <p class="location-space-tag">Ubicación</p>
+        <h3>El Morro (Montecristi)</h3>
+        <p>Colección inicial de fotos del Parque Nacional El Morro.</p>
+      </div>
+      <div class="gallery-grid">
+        <img src="https://montecristi.s3.us-east-1.amazonaws.com/1.jpeg" alt="Montecristi foto 1" loading="lazy">
+        <img src="https://montecristi.s3.us-east-1.amazonaws.com/2.jpeg" alt="Montecristi foto 2" loading="lazy">
+        <img src="https://montecristi.s3.us-east-1.amazonaws.com/3.jpeg" alt="Montecristi foto 3" loading="lazy">
+        <img src="https://montecristi.s3.us-east-1.amazonaws.com/4.jpeg" alt="Montecristi foto 4" loading="lazy">
+        <img src="https://montecristi.s3.us-east-1.amazonaws.com/5.jpeg" alt="Montecristi foto 5" loading="lazy">
+        <img src="https://montecristi.s3.us-east-1.amazonaws.com/6.jpeg" alt="Montecristi foto 6" loading="lazy">
+      </div>
+    </article>
   </section>
 
   <!-- ABOUT -->
@@ -101,13 +122,25 @@
     </div>
   </section>
 
-  <!-- MAPA -->
-  <div class="mapa container">
-    <iframe
-      src="https://www.google.com/maps?q=rio+socoa+republica+dominicana&output=embed"
-      width="100%" height="350" style="border-radius:15px;" loading="lazy">
-    </iframe>
-  </div>
+  <!-- MAPAS -->
+  <section id="mapas" class="maps-section container fade">
+    <h2>Mapas por ubicación</h2>
+    <div class="maps-grid">
+      <article class="map-card">
+        <h3>Río Socoa</h3>
+        <iframe
+          src="https://www.google.com/maps?q=rio+socoa+republica+dominicana&output=embed"
+          width="100%" height="300" loading="lazy">
+        </iframe>
+      </article>
+      <article class="map-card">
+        <h3>El Morro (Montecristi)</h3>
+        <iframe
+          src="https://www.google.com/maps?q=el+morro+de+montecristi+republica+dominicana&output=embed"
+          width="100%" height="300" loading="lazy">
+        </iframe>
+      </article>
+    </div>
   </section>
 
   <!-- FOOTER -->
