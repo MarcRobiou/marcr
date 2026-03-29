@@ -11,13 +11,13 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <header class="navbar">
     <div class="container navbar-flex">
       <h1 class="logo">Robiou’s Blog</h1>
       <nav>
         <ul>
           <li><a href="#hero">Inicio</a></li>
+          <li><a href="#bitacora">Bitácora</a></li>
           <li><a href="#destinos">Destinos</a></li>
           <li><a href="#galeria">Galería</a></li>
           <li><a href="#mapas">Mapas</a></li>
@@ -25,40 +25,139 @@
           <li><a href="#contact">Contacto</a></li>
         </ul>
       </nav>
-      <button id="darkToggle" aria-label="Activar modo oscuro">🌙</button>
+      <button id="darkToggle" aria-label="Activar modo oscuro" type="button">
+        <span class="theme-toggle-track" aria-hidden="true">
+          <span class="theme-toggle-thumb"></span>
+        </span>
+      </button>
     </div>
   </header>
 
-  <!-- SLIDER / HERO -->
   <section id="hero" class="hero-slider">
-    <div class="slide active" style="background-image:url('https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/1.jpg')"></div>
-    <div class="slide" style="background-image:url('https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/10.jpg')"></div>
-    <div class="slide" style="background-image:url('https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/8.jpg')"></div>
+    <div class="slide active" style="background-image:url('https://pub-7fb77355df6443e188c5d026c3ca173d.r2.dev/H-Slider/3.png')"></div>
+    <div class="slide" style="background-image:url('https://pub-7fb77355df6443e188c5d026c3ca173d.r2.dev/H-Slider/6.png')"></div>
+    <div class="slide" style="background-image:url('https://pub-7fb77355df6443e188c5d026c3ca173d.r2.dev/H-Slider/5.png')"></div>
 
     <div class="hero-text">
+      <p class="hero-kicker">Aventura visual en RD</p>
       <h2>Quisqueya La Bella</h2>
-      <p>Fotografía, naturaleza y aventura en República Dominicana</p>
-      <a href="#destinos" class="btn">Ver Destinos</a>
+      <p class="hero-description">Rutas, cascadas, costas y miradores capturados para mostrar una República Dominicana más abierta, salvaje y luminosa.</p>
+      <div class="hero-actions">
+        <a href="#destinos" class="btn btn-secondary">Ver Destinos</a>
+        <a href="#galeria" class="btn btn-secondary">Galería de Rutas</a>
+      </div>
+    </div>
+
+    <div class="hero-bottom-strip" aria-hidden="true">
+      <span>Montaña</span>
+      <span>Costa</span>
+      <span>Cascadas</span>
+      <span>Horizonte</span>
     </div>
   </section>
 
-  <!-- DESTINOS -->
+  <section class="featured-reel container fade" aria-label="Selección destacada del proyecto">
+    <div class="featured-reel-stage">
+      <img class="featured-reel-backdrop" src="https://pub-a9efcd684841479fac7eb490ff711c15.r2.dev/montecristi/5.jpeg" alt="Vista panorámica de Montecristi" loading="lazy">
+
+      <div class="featured-reel-cards">
+        <button class="reel-card reel-card-one is-active" type="button" data-backdrop="https://pub-5050d6eb784d4fc48fd4c9e6c8b96651.r2.dev/Socoa/10.jpg" data-backdrop-alt="Cascada principal del Salto de Socoa" aria-label="Mostrar cascada de Socoa en grande">
+          <img src="https://pub-5050d6eb784d4fc48fd4c9e6c8b96651.r2.dev/Socoa/10.jpg" alt="Cascada principal del Salto de Socoa" loading="lazy">
+        </button>
+        <button class="reel-card reel-card-two" type="button" data-backdrop="https://pub-a9efcd684841479fac7eb490ff711c15.r2.dev/montecristi/3.jpeg" data-backdrop-alt="Acantilado y playa de piedras en Montecristi" aria-label="Mostrar acantilado de Montecristi en grande">
+          <img src="https://pub-a9efcd684841479fac7eb490ff711c15.r2.dev/montecristi/3.jpeg" alt="Acantilado y playa de piedras en Montecristi" loading="lazy">
+        </button>
+        <button class="reel-card reel-card-three" type="button" data-backdrop="https://pub-5050d6eb784d4fc48fd4c9e6c8b96651.r2.dev/Socoa/4.jpg" data-backdrop-alt="Poza turquesa rodeada de bosque en Socoa" aria-label="Mostrar poza de Socoa en grande">
+          <img src="https://pub-5050d6eb784d4fc48fd4c9e6c8b96651.r2.dev/Socoa/4.jpg" alt="Poza turquesa rodeada de bosque en Socoa" loading="lazy">
+        </button>
+      </div>
+    </div>
+
+    <div class="featured-reel-meta">
+      <article class="reel-meta-card">
+        <p class="reel-meta-label">Socoa</p>
+        <h3>Cascada</h3>
+        <p>Caída principal, roca clara y agua fría como punto de entrada al recorrido.</p>
+      </article>
+      <article class="reel-meta-card">
+        <p class="reel-meta-label">Montecristi</p>
+        <h3>Acantilado</h3>
+        <p>Textura costera, piedra y horizonte abierto para contrastar con el bosque interior.</p>
+      </article>
+      <article class="reel-meta-card">
+        <p class="reel-meta-label">Socoa</p>
+        <h3>Poza</h3>
+        <p>Un cierre más sereno con color turquesa y vegetación envolviendo la escena.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="bitacora" class="journal-section container fade">
+    <div class="journal-heading">
+      <p class="journal-kicker">Bitácora visual</p>
+      <h2>Historias cortas del camino</h2>
+    </div>
+
+    <div class="journal-layout">
+      <div class="journal-posts">
+        <article class="journal-card">
+          <img src="https://pub-5050d6eb784d4fc48fd4c9e6c8b96651.r2.dev/Socoa/10.jpg" alt="Cascada del Salto de Socoa rodeada de vegetación" loading="lazy">
+          <div class="journal-card-content">
+            <header class="journal-meta">
+              <p>Ruta</p>
+              <time datetime="2025-02-10">10 febrero 2025</time>
+            </header>
+            <h3>Primer descenso al Salto</h3>
+            <p>Un tramo corto entre sombra y agua fría. Es la clase de lugar donde llegas con cámara, pero terminas quedándote en silencio.</p>
+          </div>
+        </article>
+
+        <article class="journal-card">
+          <img src="https://pub-a9efcd684841479fac7eb490ff711c15.r2.dev/montecristi/2.jpeg" alt="Atardecer sobre el mar en Montecristi" loading="lazy">
+          <div class="journal-card-content">
+            <header class="journal-meta">
+              <p>Exploración</p>
+              <time datetime="2025-02-18">18 febrero 2025</time>
+            </header>
+            <h3>Luz dorada en El Morro</h3>
+            <p>Montecristi tiene un carácter distinto: más seco, más abierto y con una costa que cambia de color según la hora.</p>
+          </div>
+        </article>
+      </div>
+
+      <aside class="journal-notes" aria-label="Notas rápidas de viaje">
+        <h3>Notas rápidas</h3>
+        <article class="note-item">
+          <p class="note-label">Equipo</p>
+          <p>Protector para cámara y zapatos con tracción. El acceso en roca húmeda puede resbalar.</p>
+        </article>
+        <article class="note-item">
+          <p class="note-label">Hora ideal</p>
+          <p>Temprano en la mañana para luz suave y menos gente en zonas de agua.</p>
+        </article>
+        <article class="note-item">
+          <p class="note-label">Próxima parada</p>
+          <p>Sumar nuevas rutas costeras y senderos del norte para ampliar el mapa del proyecto.</p>
+        </article>
+      </aside>
+    </div>
+  </section>
+
   <section id="destinos" class="destinations-section container fade">
     <h2>Destinos de aventura</h2>
 
     <div class="destination-grid">
       <a href="#socoa-space" class="polaroid-card" aria-label="Entrar al espacio de Río Socoa">
-        <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/1.jpg" alt="Tarjeta del destino Río Socoa" loading="lazy">
+        <img src="https://pub-5050d6eb784d4fc48fd4c9e6c8b96651.r2.dev/Socoa/5.jpg" alt="Tarjeta del destino Salto de Socoa" loading="lazy">
         <span class="polaroid-title">Salto de Socoa</span>
       </a>
       <a href="#montecristi-space" class="polaroid-card" aria-label="Entrar al espacio de El Morro">
-        <img src="https://montecristi.s3.us-east-1.amazonaws.com/1.jpeg" alt="Tarjeta del destino El Morro" loading="lazy">
+        <img src="https://pub-a9efcd684841479fac7eb490ff711c15.r2.dev/montecristi/5.jpeg" alt="Tarjeta del destino El Morro" loading="lazy">
         <span class="polaroid-title">El Morro</span>
       </a>
     </div>
   </section>
 
-  <!-- GALERÍA -->
   <section id="galeria" class="gallery-section container fade">
     <h2>Galería por ubicación</h2>
 
@@ -69,12 +168,12 @@
         <p>Fotografías del Salto de Socoa y su entorno natural.</p>
       </div>
       <div class="gallery-grid">
-        <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/1.jpg" alt="Río Socoa entre rocas y vegetación" loading="lazy">
-        <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/10.jpg" alt="Paisaje natural del Río Socoa" loading="lazy">
-        <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/8.jpg" alt="Vista panorámica del entorno de Socoa" loading="lazy">
-        <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/7.jpg" alt="Cauce del río rodeado de naturaleza" loading="lazy">
-        <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/2.jpg" alt="Zona de agua cristalina en Socoa" loading="lazy">
-        <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/5.jpg" alt="Detalle de paisaje en el Río Socoa" loading="lazy">
+        <img src="https://pub-5050d6eb784d4fc48fd4c9e6c8b96651.r2.dev/Socoa/10.jpg" alt="Cascada principal del Salto de Socoa" loading="lazy">
+        <img src="https://pub-5050d6eb784d4fc48fd4c9e6c8b96651.r2.dev/Socoa/5.jpg" alt="Vista amplia de la cascada y la poza de Socoa" loading="lazy">
+        <img src="https://pub-5050d6eb784d4fc48fd4c9e6c8b96651.r2.dev/Socoa/6.jpg" alt="Agua cristalina frente al salto de Socoa" loading="lazy">
+        <img src="https://pub-5050d6eb784d4fc48fd4c9e6c8b96651.r2.dev/Socoa/1.jpg" alt="Río Socoa entre rocas y vegetación" loading="lazy">
+        <img src="https://pub-5050d6eb784d4fc48fd4c9e6c8b96651.r2.dev/Socoa/4.jpg" alt="Poza turquesa rodeada de bosque en Socoa" loading="lazy">
+        <img src="https://pub-5050d6eb784d4fc48fd4c9e6c8b96651.r2.dev/Socoa/2.jpg" alt="Zona tranquila de agua cristalina en Socoa" loading="lazy">
       </div>
     </article>
 
@@ -85,17 +184,16 @@
         <p>Colección inicial de fotos del Parque Nacional El Morro.</p>
       </div>
       <div class="gallery-grid">
-        <img src="https://montecristi.s3.us-east-1.amazonaws.com/1.jpeg" alt="Montecristi foto 1" loading="lazy">
-        <img src="https://montecristi.s3.us-east-1.amazonaws.com/2.jpeg" alt="Montecristi foto 2" loading="lazy">
-        <img src="https://montecristi.s3.us-east-1.amazonaws.com/3.jpeg" alt="Montecristi foto 3" loading="lazy">
-        <img src="https://montecristi.s3.us-east-1.amazonaws.com/4.jpeg" alt="Montecristi foto 4" loading="lazy">
-        <img src="https://montecristi.s3.us-east-1.amazonaws.com/5.jpeg" alt="Montecristi foto 5" loading="lazy">
-        <img src="https://montecristi.s3.us-east-1.amazonaws.com/6.jpeg" alt="Montecristi foto 6" loading="lazy">
+        <img src="https://pub-a9efcd684841479fac7eb490ff711c15.r2.dev/montecristi/5.jpeg" alt="Vista panorámica de la costa de Montecristi" loading="lazy">
+        <img src="https://pub-a9efcd684841479fac7eb490ff711c15.r2.dev/montecristi/1.jpeg" alt="Formación rocosa y mar azul en El Morro" loading="lazy">
+        <img src="https://pub-a9efcd684841479fac7eb490ff711c15.r2.dev/montecristi/3.jpeg" alt="Acantilado y playa de piedras en Montecristi" loading="lazy">
+        <img src="https://pub-a9efcd684841479fac7eb490ff711c15.r2.dev/montecristi/4.jpeg" alt="Orilla pedregosa con agua turquesa en El Morro" loading="lazy">
+        <img src="https://pub-a9efcd684841479fac7eb490ff711c15.r2.dev/montecristi/6.jpeg" alt="Roca aislada frente al mar abierto en Montecristi" loading="lazy">
+        <img src="https://pub-a9efcd684841479fac7eb490ff711c15.r2.dev/montecristi/2.jpeg" alt="Atardecer naranja sobre el mar de Montecristi" loading="lazy">
       </div>
     </article>
   </section>
 
-  <!-- ABOUT -->
   <section id="about" class="about-section fade">
     <div class="container about-grid">
       <div>
@@ -107,22 +205,19 @@
           Si quieres colaborar en contenido, rutas o visitas, será un gusto conectar.
         </p>
       </div>
-      <img src="https://mipg-fotos.s3.us-east-2.amazonaws.com/Socoa/4.jpg" alt="Fotografía de naturaleza en República Dominicana" loading="lazy">
+      <img src="https://pub-5050d6eb784d4fc48fd4c9e6c8b96651.r2.dev/Socoa/1.jpg" alt="Cascada y entorno natural del Salto de Socoa" loading="lazy">
     </div>
   </section>
 
-  <!-- CONTACTO -->
   <section id="contact" class="contact-section fade">
     <div class="container">
       <h2>Contacto</h2>
       <p class="contact-links">
          <a href="mailto:marcelo.robiu@gmail.com">marcelo.robiu@gmail.com</a>
-         <a href="tel:+18297637272">+1 829 763 7272</a>
       </p>
     </div>
   </section>
 
-  <!-- MAPAS -->
   <section id="mapas" class="maps-section container fade">
     <h2>Mapas por ubicación</h2>
     <div class="maps-grid">
@@ -143,21 +238,16 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <p>© 2025 Robiou’s - Travel Blog</p>
   </footer>
 
-  <!-- LIGHTBOX -->
   <div id="lightbox">
     <span id="close" aria-label="Cerrar visor">&times;</span>
     <button id="prevImage" class="lightbox-nav" aria-label="Imagen anterior">&#10094;</button>
     <img id="lightbox-img" alt="Imagen ampliada de la galería">
     <button id="nextImage" class="lightbox-nav" aria-label="Imagen siguiente">&#10095;</button>
   </div>
-
-  <!-- WHATSAPP -->
-  <a href="https://wa.me/18297637272" class="whatsapp-float" target="_blank" aria-label="Abrir chat de WhatsApp">💬</a>
 
   <script src="script.js"></script>
 </body>

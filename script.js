@@ -81,12 +81,46 @@ const observer = new IntersectionObserver(
 
 faders.forEach((el) => observer.observe(el));
 
+// FEATURED REEL
+const reelBackdrop = document.querySelector(".featured-reel-backdrop");
+const reelCards = document.querySelectorAll(".reel-card");
+
+if (reelBackdrop && reelCards.length) {
+  reelCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const nextSrc = card.dataset.backdrop;
+      const nextAlt = card.dataset.backdropAlt;
+
+      if (!nextSrc) {
+        return;
+      }
+
+      reelCards.forEach((item) => item.classList.remove("is-active"));
+      card.classList.add("is-active");
+
+      reelBackdrop.style.opacity = "0.45";
+      reelBackdrop.style.transform = "scale(1.08)";
+
+      window.setTimeout(() => {
+        reelBackdrop.src = nextSrc;
+        if (nextAlt) {
+          reelBackdrop.alt = nextAlt;
+        }
+      }, 180);
+
+      window.setTimeout(() => {
+        reelBackdrop.style.opacity = "1";
+        reelBackdrop.style.transform = "scale(1)";
+      }, 220);
+    });
+  });
+}
+
 // DARK MODE
 const toggle = document.getElementById("darkToggle");
 
 function updateThemeButton() {
   const isDark = document.body.classList.contains("dark");
-  toggle.textContent = isDark ? "☀️" : "🌙";
   toggle.setAttribute("aria-label", isDark ? "Activar modo claro" : "Activar modo oscuro");
 }
 
