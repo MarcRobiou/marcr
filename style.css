@@ -1001,20 +1001,25 @@ body.dark .footer {
   .navbar-flex {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto auto;
-    align-items: center;
+    align-items: start;
     gap: 10px 12px;
   }
 
   .logo {
     font-size: 1.08rem;
+    align-self: center;
   }
 
   .nav-toggle {
     display: grid;
+    grid-column: 2;
+    grid-row: 1;
     justify-self: end;
+    align-self: center;
   }
 
   .navbar nav {
+    grid-row: 2;
     grid-column: 1 / -1;
     width: 100%;
     max-height: 0;
@@ -1050,7 +1055,11 @@ body.dark .footer {
   }
 
   #darkToggle {
+    grid-column: 3;
+    grid-row: 1;
     justify-self: end;
+    align-self: center;
+    margin-top: 0;
   }
 
   body.nav-open .navbar nav {
