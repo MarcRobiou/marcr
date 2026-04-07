@@ -116,6 +116,27 @@ if (reelBackdrop && reelCards.length) {
   });
 }
 
+// MOBILE NAV
+const navToggle = document.getElementById("navToggle");
+const mobileNavLinks = document.querySelectorAll("#siteNav a");
+
+if (navToggle) {
+  navToggle.addEventListener("click", () => {
+    const willOpen = !document.body.classList.contains("nav-open");
+    document.body.classList.toggle("nav-open", willOpen);
+    navToggle.setAttribute("aria-expanded", String(willOpen));
+    navToggle.setAttribute("aria-label", willOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación");
+  });
+
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      document.body.classList.remove("nav-open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "Abrir menú de navegación");
+    });
+  });
+}
+
 // DARK MODE
 const toggle = document.getElementById("darkToggle");
 
