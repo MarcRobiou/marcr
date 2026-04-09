@@ -1,15 +1,3 @@
-// SLIDER
-const slides = document.querySelectorAll(".slide");
-let index = 0;
-
-if (slides.length > 1) {
-  setInterval(() => {
-    slides[index].classList.remove("active");
-    index = (index + 1) % slides.length;
-    slides[index].classList.add("active");
-  }, 4500);
-}
-
 // LIGHTBOX
 const images = document.querySelectorAll(".gallery-grid img");
 const lightbox = document.getElementById("lightbox");
@@ -84,6 +72,7 @@ faders.forEach((el) => observer.observe(el));
 // FEATURED REEL
 const reelBackdrop = document.querySelector(".featured-reel-backdrop");
 const reelCards = document.querySelectorAll(".reel-card");
+const verticalReels = document.querySelectorAll(".vertical-reel");
 
 if (reelBackdrop && reelCards.length) {
   reelCards.forEach((card) => {
@@ -112,6 +101,26 @@ if (reelBackdrop && reelCards.length) {
         reelBackdrop.style.opacity = "1";
         reelBackdrop.style.transform = "scale(1)";
       }, 220);
+    });
+  });
+}
+
+// VERTICAL REELS
+if (verticalReels.length) {
+  verticalReels.forEach((video) => {
+    const loopSeconds = Number(video.dataset.loopSeconds || 0);
+
+    if (!loopSeconds) {
+      return;
+    }
+
+    video.addEventListener("timeupdate", () => {
+      if (video.currentTime >= loopSeconds) {
+        video.currentTime = 0;
+        if (video.paused) {
+          video.play().catch(() => {});
+        }
+      }
     });
   });
 }
