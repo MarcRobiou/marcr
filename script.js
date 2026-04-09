@@ -107,8 +107,37 @@ if (reelBackdrop && reelCards.length) {
 
 // VERTICAL REELS
 if (verticalReels.length) {
+  const verticalReelsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+
+        if (!(video instanceof HTMLVideoElement)) {
+          return;
+        }
+
+        if (entry.isIntersecting) {
+          video.muted = true;
+          video.playsInline = true;
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    },
+    { threshold: 0.55 }
+  );
+
   verticalReels.forEach((video) => {
     const loopSeconds = Number(video.dataset.loopSeconds || 0);
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+    verticalReelsObserver.observe(video);
 
     if (!loopSeconds) {
       return;
