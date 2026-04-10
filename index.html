@@ -13,7 +13,18 @@
 
   <header class="navbar">
     <div class="container navbar-flex">
-      <h1 class="logo">Robiou’s Blog</h1>
+      <h1 class="logo">
+        <a class="logo-link" href="#hero" aria-label="Ir al inicio de Robiou's Blog">
+          <span class="logo-mark" aria-hidden="true">
+            <span class="logo-swirl logo-swirl-one"></span>
+            <span class="logo-swirl logo-swirl-two"></span>
+            <span class="logo-swirl logo-swirl-three"></span>
+            <span class="logo-swirl logo-swirl-four"></span>
+            <span class="logo-swirl logo-swirl-five"></span>
+          </span>
+          <span class="logo-name">Robiou’s Blog</span>
+        </a>
+      </h1>
       <button id="navToggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Abrir menú de navegación">
         <span></span>
         <span></span>
@@ -51,20 +62,37 @@
       <source src="https://pub-5050d6eb784d4fc48fd4c9e6c8b96651.r2.dev/15356407_3840_2160_24fps.mp4" type="video/mp4">
     </video>
 
-    <div class="hero-text">
-      <p class="hero-kicker">Aventura visual en RD</p>
-      <h2>Quisqueya La Bella</h2>
-      <div class="hero-actions">
-        <a href="#destinos" class="btn btn-secondary">Ver Destinos</a>
-        <a href="#galeria" class="btn btn-secondary">Galería de Rutas</a>
+    <div class="hero-text hero-seal" aria-label="Quisqueya Bella">
+      <div class="hero-seal-ring hero-seal-ring-top" aria-hidden="true">
+        <span style="--i:0;">Q</span>
+        <span style="--i:1;">U</span>
+        <span style="--i:2;">I</span>
+        <span style="--i:3;">S</span>
+        <span style="--i:4;">Q</span>
+        <span style="--i:5;">U</span>
+        <span style="--i:6;">E</span>
+        <span style="--i:7;">Y</span>
+        <span style="--i:8;">A</span>
+      </div>
+      <div class="hero-seal-core" aria-hidden="true">
+        <span class="hero-seal-swirl hero-seal-swirl-one"></span>
+        <span class="hero-seal-swirl hero-seal-swirl-two"></span>
+        <span class="hero-seal-swirl hero-seal-swirl-three"></span>
+        <span class="hero-seal-swirl hero-seal-swirl-four"></span>
+        <span class="hero-seal-swirl hero-seal-swirl-five"></span>
+      </div>
+      <div class="hero-seal-ring hero-seal-ring-bottom" aria-hidden="true">
+        <span style="--i:0;">A</span>
+        <span style="--i:1;">L</span>
+        <span style="--i:2;">L</span>
+        <span style="--i:3;">E</span>
+        <span style="--i:4;">B</span>
       </div>
     </div>
 
-    <div class="hero-bottom-strip" aria-hidden="true">
-      <span>Montaña</span>
-      <span>Costa</span>
-      <span>Cascadas</span>
-      <span>Horizonte</span>
+    <div class="hero-actions">
+      <a href="#destinos" class="btn btn-secondary hero-btn hero-btn-left">Ver Destinos</a>
+      <a href="#galeria" class="btn btn-secondary hero-btn hero-btn-right">Galería de Rutas</a>
     </div>
   </section>
 
