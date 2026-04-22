@@ -1,4 +1,86 @@
 // LIGHTBOX
+const cursorDot = document.querySelector(".custom-cursor-dot");
+const cursorShadow = document.querySelector(".custom-cursor-shadow");
+const supportsCustomCursor = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+const heroSection = document.querySelector(".hero-slider");
+const heroSealCore = document.querySelector(".hero-seal-core");
+const heroSealSwirls = document.querySelectorAll(".hero-seal-swirl");
+
+if (cursorDot && cursorShadow && supportsCustomCursor) {
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let shadowX = mouseX;
+  let shadowY = mouseY;
+
+  const animateCursorShadow = () => {
+    shadowX += (mouseX - shadowX) * 0.18;
+    shadowY += (mouseY - shadowY) * 0.18;
+
+    cursorShadow.style.transform = `translate(${shadowX}px, ${shadowY}px) translate(-50%, -50%)`;
+    window.requestAnimationFrame(animateCursorShadow);
+  };
+
+  window.addEventListener("mousemove", (event) => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+
+    document.body.classList.add("cursor-active");
+    cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+  });
+
+  window.addEventListener("mouseout", (event) => {
+    if (!event.relatedTarget) {
+      document.body.classList.remove("cursor-active");
+    }
+  });
+
+  animateCursorShadow();
+}
+
+if (heroSection && heroSealCore && heroSealSwirls.length && supportsCustomCursor) {
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  const updateHeroSeal = () => {
+    currentX += (targetX - currentX) * 0.08;
+    currentY += (targetY - currentY) * 0.08;
+
+    heroSealCore.style.setProperty("--core-x", `${currentX}px`);
+    heroSealCore.style.setProperty("--core-y", `${currentY}px`);
+
+    heroSealSwirls.forEach((swirl, index) => {
+      const depth = 0.45 + index * 0.18;
+      swirl.style.setProperty("--swirl-x", `${currentX * depth}px`);
+      swirl.style.setProperty("--swirl-y", `${currentY * depth}px`);
+    });
+
+    window.requestAnimationFrame(updateHeroSeal);
+  };
+
+  window.addEventListener("mousemove", (event) => {
+    const heroBounds = heroSection.getBoundingClientRect();
+    const centerX = heroBounds.left + heroBounds.width / 2;
+    const centerY = heroBounds.top + heroBounds.height / 2;
+    const maxOffset = 18;
+    const normalizedX = (event.clientX - centerX) / (heroBounds.width / 2 || 1);
+    const normalizedY = (event.clientY - centerY) / (heroBounds.height / 2 || 1);
+
+    targetX = Math.max(-1, Math.min(1, normalizedX)) * maxOffset;
+    targetY = Math.max(-1, Math.min(1, normalizedY)) * maxOffset;
+  });
+
+  window.addEventListener("mouseout", (event) => {
+    if (!event.relatedTarget) {
+      targetX = 0;
+      targetY = 0;
+    }
+  });
+
+  updateHeroSeal();
+}
+
 const images = document.querySelectorAll(".gallery-grid img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");

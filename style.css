@@ -40,12 +40,59 @@ body.dark {
   background: radial-gradient(circle at top right, #20263a 0%, #13161f 44%, #0f1118 100%);
 }
 
+@media (hover: hover) and (pointer: fine) {
+  body,
+  body a,
+  body button,
+  body [role="button"] {
+    cursor: none;
+  }
+}
+
+.custom-cursor-dot,
+.custom-cursor-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+  z-index: 9999;
+}
+
+.custom-cursor-dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(214, 124, 43, 0.92);
+  box-shadow: 0 0 0 1px rgba(73, 54, 32, 0.12);
+}
+
+.custom-cursor-shadow {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: 1.5px solid rgba(0, 0, 0, 0.78);
+}
+
+body.cursor-active .custom-cursor-dot,
+body.cursor-active .custom-cursor-shadow {
+  opacity: 1;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor-dot,
+  .custom-cursor-shadow {
+    display: none;
+  }
+}
+
 .container {
   width: min(90%, 1180px);
   margin: 0 auto;
 }
 
-/* NAVBAR */
 .navbar {
   position: fixed;
   inset: 0 0 auto 0;
@@ -393,12 +440,15 @@ body.dark .theme-toggle-thumb {
 }
 
 .hero-seal-core {
+  --core-x: 0px;
+  --core-y: 0px;
   position: relative;
   width: clamp(148px, 28vw, 220px);
   aspect-ratio: 1;
   border-radius: 50%;
   display: grid;
   place-items: center;
+  transform: translate(var(--core-x), var(--core-y));
   filter: drop-shadow(0 10px 26px rgba(0, 0, 0, 0.22));
 }
 
@@ -418,6 +468,8 @@ body.dark .theme-toggle-thumb {
 }
 
 .hero-seal-swirl {
+  --swirl-x: 0px;
+  --swirl-y: 0px;
   position: absolute;
   border: 2px solid rgba(255, 226, 188, 0.92);
   border-radius: 47% 53% 49% 51% / 54% 46% 52% 48%;
@@ -426,35 +478,35 @@ body.dark .theme-toggle-thumb {
 .hero-seal-swirl-one {
   width: 84%;
   height: 72%;
-  transform: translate(-1px, 2px) rotate(9deg);
+  transform: translate(calc(-1px + var(--swirl-x)), calc(2px + var(--swirl-y))) rotate(9deg);
   border-radius: 46% 54% 48% 52% / 55% 44% 56% 45%;
 }
 
 .hero-seal-swirl-two {
   width: 62%;
   height: 54%;
-  transform: translate(4px, -2px) rotate(22deg);
+  transform: translate(calc(4px + var(--swirl-x)), calc(-2px + var(--swirl-y))) rotate(22deg);
   border-radius: 52% 48% 54% 46% / 45% 55% 47% 53%;
 }
 
 .hero-seal-swirl-three {
   width: 42%;
   height: 36%;
-  transform: translate(-3px, 1px) rotate(36deg);
+  transform: translate(calc(-3px + var(--swirl-x)), calc(1px + var(--swirl-y))) rotate(36deg);
   border-radius: 49% 51% 45% 55% / 53% 47% 55% 45%;
 }
 
 .hero-seal-swirl-four {
   width: 24%;
   height: 20%;
-  transform: translate(2px, -1px) rotate(54deg);
+  transform: translate(calc(2px + var(--swirl-x)), calc(-1px + var(--swirl-y))) rotate(54deg);
   border-radius: 55% 45% 52% 48% / 48% 52% 44% 56%;
 }
 
 .hero-seal-swirl-five {
   width: 12%;
   height: 10%;
-  transform: translate(-1px, 1px) rotate(69deg);
+  transform: translate(calc(-1px + var(--swirl-x)), calc(1px + var(--swirl-y))) rotate(69deg);
   border-radius: 44% 56% 46% 54% / 56% 44% 58% 42%;
 }
 
